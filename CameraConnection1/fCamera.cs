@@ -15,6 +15,7 @@ namespace CameraConnection1
     {
         private FilterInfoCollection lstCamera;
         private VideoCaptureDevice currentCamera;
+
         public fCamera()
         {
             InitializeComponent();
@@ -24,7 +25,6 @@ namespace CameraConnection1
                 cbbListCamera.Items.Add(info.Name);
             }
             cbbListCamera.SelectedIndex = 0;
-            btnDisconnect.Enabled = false;
             btnTakeAPhoto.Enabled = false;
             btnClear.Enabled = false;
         }
@@ -38,7 +38,6 @@ namespace CameraConnection1
             currentCamera = new VideoCaptureDevice(lstCamera[cbbListCamera.SelectedIndex].MonikerString);
             currentCamera.NewFrame += CurrentCamera_NewFrame;
             currentCamera.Start();
-            btnDisconnect.Enabled = true;
             btnTakeAPhoto.Enabled = true;
         }
 
