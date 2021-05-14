@@ -34,10 +34,10 @@
             this.btnTakeAPhoto = new System.Windows.Forms.Button();
             this.btnDisconnect = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ptbPhoto = new System.Windows.Forms.PictureBox();
+            this.btnClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptbCam)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPhoto)).BeginInit();
             this.SuspendLayout();
             // 
             // cbbListCamera
@@ -53,6 +53,7 @@
             this.ptbCam.Location = new System.Drawing.Point(12, 66);
             this.ptbCam.Name = "ptbCam";
             this.ptbCam.Size = new System.Drawing.Size(401, 297);
+            this.ptbCam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.ptbCam.TabIndex = 1;
             this.ptbCam.TabStop = false;
             // 
@@ -95,30 +96,32 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Camera";
             // 
-            // pictureBox1
+            // ptbPhoto
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(439, 66);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(401, 297);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.ptbPhoto.Location = new System.Drawing.Point(439, 66);
+            this.ptbPhoto.Name = "ptbPhoto";
+            this.ptbPhoto.Size = new System.Drawing.Size(401, 297);
+            this.ptbPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ptbPhoto.TabIndex = 6;
+            this.ptbPhoto.TabStop = false;
             // 
-            // button1
+            // btnClear
             // 
-            this.button1.Location = new System.Drawing.Point(592, 380);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Clear";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnClear.Location = new System.Drawing.Point(592, 380);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(87, 23);
+            this.btnClear.TabIndex = 7;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // fCamera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(876, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.ptbPhoto);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnDisconnect);
             this.Controls.Add(this.btnTakeAPhoto);
@@ -128,7 +131,7 @@
             this.Name = "fCamera";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.ptbCam)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPhoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,8 +147,8 @@
         private System.Windows.Forms.Button btnTakeAPhoto;
         private System.Windows.Forms.Button btnDisconnect;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox ptbPhoto;
+        private System.Windows.Forms.Button btnClear;
     }
 }
 

@@ -26,6 +26,7 @@ namespace CameraConnection1
             cbbListCamera.SelectedIndex = 0;
             btnDisconnect.Enabled = false;
             btnTakeAPhoto.Enabled = false;
+            btnClear.Enabled = false;
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
@@ -51,7 +52,7 @@ namespace CameraConnection1
         {
             if (currentCamera != null && currentCamera.IsRunning)
             {
-                currentCamera.Stop();
+                currentCamera = null;
                 btnDisconnect.Enabled = false;
                 btnTakeAPhoto.Enabled = false;
             }
@@ -70,18 +71,17 @@ namespace CameraConnection1
         {
             if (ptbCam != null)
             {
-                SaveFileDialog savePhoto = new SaveFileDialog();
-                savePhoto.Filter = "JPG | *.jpg | PNG | *.png";
-                savePhoto.Title = "Save an Image File";
-                if (savePhoto.ShowDialog() == DialogResult.OK)
-                {
-                    ptbCam.Image.Save(savePhoto.FileName);
-                }
+                ptbPhoto.Image = ptbCam.Image;
+                btnTakeAPhoto.Enabled = false;
+                btnClear.Enabled = true;
             }
-            else
-            {
-                MessageBox.Show("No camera to take a photo!");
-            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            btnTakeAPhoto.Enabled = true;
+            btnClear.Enabled = false;
+            ptbPhoto.Image = null;
         }
     }
 }
