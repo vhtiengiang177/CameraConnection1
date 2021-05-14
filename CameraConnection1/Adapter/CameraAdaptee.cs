@@ -14,5 +14,10 @@ namespace CameraConnection1
         {
             camera.Start();
         }
+
+        public void Stop(VideoCaptureDevice camera)
+        {
+            camera.Stop();
+        }
     }
 }

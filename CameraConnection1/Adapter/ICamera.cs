@@ -8,10 +8,12 @@ using System.Threading.Tasks;
 
 namespace CameraConnection1
 {
-    
     interface ICamera
     {
-        // Xác định chức năng mở camera  
+        // Chức năng mở camera
         void Start(VideoCaptureDevice camera);
+
+        // Chức năng tắt camera
+        void Stop(VideoCaptureDevice camera);
     }
 }

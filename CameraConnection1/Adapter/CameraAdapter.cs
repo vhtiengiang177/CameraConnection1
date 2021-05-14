@@ -11,15 +11,20 @@ namespace CameraConnection1
     {
         private readonly CameraAdaptee _cameraAdaptee;
 
+        // Bộ chuyển đổi để interface của CameraAdaptee tương thích với ICamera 
         public CameraAdapter(CameraAdaptee cameraAdaptee)
         {
             this._cameraAdaptee = cameraAdaptee;
         }
 
-        // Bộ chuyển đổi để interface của CameraAdaptee tương thích với ICamera 
         public void Start(VideoCaptureDevice camera)
         {
             _cameraAdaptee.Start(camera);
+        }
+
+        public void Stop(VideoCaptureDevice camera)
+        {
+            _cameraAdaptee.Stop(camera);
         }
     }
 }
