@@ -9,6 +9,7 @@ namespace CameraConnection1
 {
     class CameraAdaptee
     {
+        // Hàm bật camera đã có ở camera đã thiết lập 
         public void Start(VideoCaptureDevice camera)
         {
             camera.Start();

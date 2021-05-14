@@ -16,6 +16,7 @@ namespace CameraConnection1
             this._cameraAdaptee = cameraAdaptee;
         }
 
+        // Bộ chuyển đổi để interface của CameraAdaptee tương thích với ICamera 
         public void Start(VideoCaptureDevice camera)
         {
             _cameraAdaptee.Start(camera);

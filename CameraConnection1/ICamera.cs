@@ -9,6 +9,7 @@ namespace CameraConnection1
 {
     interface ICamera
     {
+        // Xác định chức năng có trong camera
         void Start(VideoCaptureDevice camera);
     }
 }
