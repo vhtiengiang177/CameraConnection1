@@ -15,10 +15,15 @@ namespace CameraConnection1
     {
         private FilterInfoCollection lstCamera;
         private VideoCaptureDevice currentCamera;
+        private StateContext context;
 
         public fCamera()
         {
             InitializeComponent();
+            // Khởi tạo context với trạng thái hiện tại là TakeAPhotoState. 
+            // Nếu muốn đổi sang trạng thái khác thì gọi 
+            // context.setState(new TakeAPhotoSpecialState());
+            StateContext context = new StateContext();
             lstCamera = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             foreach (FilterInfo info in lstCamera)
             {
@@ -38,6 +43,7 @@ namespace CameraConnection1
             currentCamera = new VideoCaptureDevice(lstCamera[cbbListCamera.SelectedIndex].MonikerString);
             currentCamera.NewFrame += CurrentCamera_NewFrame;
 
+            // Khởi động camera
             CameraAdaptee cameraAdaptee = new CameraAdaptee();
             ICamera camera = new CameraAdapter(cameraAdaptee);
             camera.Start(currentCamera);
@@ -65,7 +71,8 @@ namespace CameraConnection1
         {
             if (ptbCam != null)
             {
-                ptbPhoto.Image = ptbCam.Image;
+                // Chức năng chụp hình
+                ptbPhoto.Image = context.takeAPhoto(ptbCam.Image);
                 btnTakeAPhoto.Enabled = false;
                 btnClear.Enabled = true;
             }
@@ -76,11 +83,6 @@ namespace CameraConnection1
             btnTakeAPhoto.Enabled = true;
             btnClear.Enabled = false;
             ptbPhoto.Image = null;
-        }
-
-        private void fCamera_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

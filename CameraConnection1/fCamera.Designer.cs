@@ -123,7 +123,6 @@
             this.Controls.Add(this.cbbListCamera);
             this.Name = "fCamera";
             this.Text = "Camera";
-            this.Load += new System.EventHandler(this.fCamera_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptbCam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPhoto)).EndInit();
             this.ResumeLayout(false);
