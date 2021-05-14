@@ -48,16 +48,6 @@ namespace CameraConnection1
             ptbCam.Image = img;
         }
 
-        private void btnDisconnect_Click(object sender, EventArgs e)
-        {
-            if (currentCamera != null && currentCamera.IsRunning)
-            {
-                currentCamera = null;
-                btnDisconnect.Enabled = false;
-                btnTakeAPhoto.Enabled = false;
-            }
-        }
-
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
