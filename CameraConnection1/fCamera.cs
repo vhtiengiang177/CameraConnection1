@@ -37,7 +37,12 @@ namespace CameraConnection1
             }
             currentCamera = new VideoCaptureDevice(lstCamera[cbbListCamera.SelectedIndex].MonikerString);
             currentCamera.NewFrame += CurrentCamera_NewFrame;
-            currentCamera.Start();
+
+            CameraAdaptee cameraAdaptee = new CameraAdaptee();
+            ICamera camera = new CameraAdapter(cameraAdaptee);
+            camera.Start(currentCamera);
+
+            //currentCamera.Start();
             btnTakeAPhoto.Enabled = true;
         }
 
@@ -71,6 +76,11 @@ namespace CameraConnection1
             btnTakeAPhoto.Enabled = true;
             btnClear.Enabled = false;
             ptbPhoto.Image = null;
+        }
+
+        private void fCamera_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

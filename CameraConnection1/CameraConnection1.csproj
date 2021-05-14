@@ -55,12 +55,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CameraAdaptee.cs" />
+    <Compile Include="CameraAdapter.cs" />
     <Compile Include="fCamera.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fCamera.Designer.cs">
       <DependentUpon>fCamera.cs</DependentUpon>
     </Compile>
+    <Compile Include="ICamera.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="fCamera.resx">
@@ -75,6 +78,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="bin\Debug\CameraConnection1.exe.config" />
+    <None Include="bin\Release\CameraConnection1.exe.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -89,5 +94,18 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\AForge.dll" />
+    <Content Include="bin\Debug\AForge.Video.DirectShow.dll" />
+    <Content Include="bin\Debug\AForge.Video.DirectShow.xml" />
+    <Content Include="bin\Debug\AForge.Video.dll" />
+    <Content Include="bin\Debug\AForge.Video.xml" />
+    <Content Include="bin\Debug\AForge.xml" />
+    <Content Include="bin\Debug\CameraConnection1.exe" />
+    <Content Include="bin\Debug\CameraConnection1.pdb" />
+    <Content Include="bin\Release\CameraConnection1.exe" />
+    <Content Include="bin\Release\CameraConnection1.pdb" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
